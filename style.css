@@ -34,14 +34,38 @@
 
 
 
-    .logos {
+    .logos-wrapper {
+        position: relative;
+        display: inline-block;
+        }
+
+        .logos {
         height: 28px;
         cursor: pointer;
         margin: 2.5px;
         padding: 8px;
         border-radius: 4px;
         transition: background-color 0.2s ease, box-shadow 0.2s ease;
-    }
+        }
+
+        .indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;           
+            height: 3px;          
+            background-color: rgba(255, 255, 255, 0.658);
+            border-radius: 6px;    
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.384);
+            display: none;
+        }
+
+
+        .logos-wrapper.active .indicator {
+        display: block;
+        }
+
 
     .logos:hover {
         background-color: rgba(255, 255, 255, 0.1);

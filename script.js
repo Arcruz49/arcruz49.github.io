@@ -56,17 +56,21 @@ focused on building scalable, maintainable, and modern web applications.
     const $notepadWindow = $('#notepad-window');
     const $closeBtn = $('#notepad-close');
     const $notepadHeader = $('#notepad-header');
+    const $notepadIcon = $('#notepadIcon');
 
-
-
-
+    $notepadIcon.hide()
 
     $shortcut.on('dblclick', function () {
         $notepadWindow.css('display', 'flex');
+        $notepadIcon.show()
+        $('#notepadIcon').parent('.logos-wrapper').addClass('active');
     });
 
     $closeBtn.on('click', function () {
         $notepadWindow.css('display', 'none');
+        $('#notepadIcon').parent('.logos-wrapper').removeClass('active');
+
+        $notepadIcon.hide()
     });
 
     let isDragging = false;
