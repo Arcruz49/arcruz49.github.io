@@ -54,9 +54,12 @@ focused on building scalable, maintainable, and modern web applications.
 
     const $shortcut = $('.shortcut-wrapper');
     const $notepadWindow = $('#notepad-window');
+    const $windowsmenu = $('#windows-menu');
+
     const $closeBtn = $('#notepad-close');
     const $notepadHeader = $('#notepad-header');
     const $notepadIcon = $('#notepadIcon');
+    const $wlogo = $('#wlogo'); 
 
     $notepadIcon.hide()
 
@@ -72,6 +75,12 @@ focused on building scalable, maintainable, and modern web applications.
 
         $notepadIcon.hide()
     });
+
+    $wlogo.on('click', function () {
+        $windowsmenu.toggleClass('active');
+    });
+
+
 
     let isDragging = false;
     let offsetX, offsetY;
@@ -98,9 +107,4 @@ focused on building scalable, maintainable, and modern web applications.
         $('body').css('user-select', 'auto');
     });
 
-    // $(function () {
-    //     $('#notepad-window').resizable({
-    //         handles: 'n, e, s, w, ne, se, sw, nw'
-    //     });
-    // });
 });
